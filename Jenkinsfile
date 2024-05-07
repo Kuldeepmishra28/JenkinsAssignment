@@ -27,12 +27,12 @@ pipeline {
                 bat 'mvn test'
             }
             
-            post {
+            // post {
                 
-                always {
-                    junit '**/target/surefire-reports/*.xml'
-                }
-            }
+            //     always {
+            //         junit '**/target/surefire-reports/*.xml'
+            //     }
+            // }
         }
         
         // stage('Deploy') {
