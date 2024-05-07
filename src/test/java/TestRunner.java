@@ -3,7 +3,7 @@ import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.testng.annotations.Test;
+
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 		tags="@login"
 		)
 
-@Test
+
 public class TestRunner {
 
 }
