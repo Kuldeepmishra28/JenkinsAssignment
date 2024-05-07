@@ -21,19 +21,19 @@ pipeline {
             }
         }
         
-        // stage('Test') {
-        //     steps {
+        stage('Test') {
+            steps {
                
-        //         sh 'mvn test'
-        //     }
+                bat 'mvn test'
+            }
             
-        //     post {
+            post {
                 
-        //         always {
-        //             junit '**/target/surefire-reports/*.xml'
-        //         }
-        //     }
-        // }
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                }
+            }
+        }
         
         // stage('Deploy') {
         //     steps {
