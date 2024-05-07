@@ -23,7 +23,7 @@ pipeline {
         
         stage('Test') {
             steps {
-               bat "${env.MAVEN_HOME}/bin/mvn test -Dtest=TestRunner"
+               bat "${env.MAVEN_HOME}\\bin\\mvn test -Dtest=TestRunner"
                 // bat 'mvn test'
             }
             
