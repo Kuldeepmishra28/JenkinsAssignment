@@ -24,6 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                bat "mvn test -Dtest=TestRunner"
+                archiveArtifacts 'target/surefire-reports/**/*.xml'
                 // bat 'mvn test'
             }
             
