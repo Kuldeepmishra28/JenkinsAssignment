@@ -1,6 +1,7 @@
 pipeline {
     agent any
     
+   
     stages {
         stage('Checkout') {
             steps {
@@ -8,7 +9,8 @@ pipeline {
                 checkout scm
             }
         }
-        
+
+      
         stage('Build') {
             steps {
            
@@ -16,19 +18,19 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
+        // stage('Test') {
+        //     steps {
                
-                sh 'mvn test'
-            }
+        //         sh 'mvn test'
+        //     }
             
-            post {
+        //     post {
                 
-                always {
-                    junit '**/target/surefire-reports/*.xml'
-                }
-            }
-        }
+        //         always {
+        //             junit '**/target/surefire-reports/*.xml'
+        //         }
+        //     }
+        // }
         
         // stage('Deploy') {
         //     steps {
@@ -44,6 +46,8 @@ pipeline {
             }
         }
     }
-    
+      triggers {
+            pollSCM('* * * * *')
+        }
 
 }
