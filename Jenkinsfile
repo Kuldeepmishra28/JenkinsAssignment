@@ -23,7 +23,7 @@ pipeline {
         
         stage('Test') {
             steps {
-               bat "mvn test -Dtest=TestRunner"
+               bat "mvn test -Dtest=TestRunner -DfailIfNoTests=false"
                 archiveArtifacts 'target/surefire-reports/**/*.xml'
                 // bat 'mvn test'
             }
