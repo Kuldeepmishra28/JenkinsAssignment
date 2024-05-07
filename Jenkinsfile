@@ -23,7 +23,9 @@ pipeline {
         
         stage('Test') {
             steps {
-               bat "mvn test -Dtest=TestRunner -DfailIfNoTests=false"
+               // bat "mvn test -Dtest=TestRunner -DfailIfNoTests=false"
+
+                bat "mvn exec:java -Dexec.mainClass=TestRunner -Dexec.classpathScope=test"
                 archiveArtifacts 'target/surefire-reports/**/*.xml'
                 // bat 'mvn test'
             }
