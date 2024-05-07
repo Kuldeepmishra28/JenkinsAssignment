@@ -45,7 +45,7 @@ pipeline {
         stage('Clean Up') {
             steps {
               
-                sh 'rm -rf target'
+                bat 'rm -rf target'
             }
         }
     }
